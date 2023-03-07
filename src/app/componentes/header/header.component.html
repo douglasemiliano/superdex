@@ -1,0 +1,12 @@
+<header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+            <img src="https://icon-library.com/images/pokedex-icon/pokedex-icon-18.jpg" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            <span class="fs-4"><b>SuperDex</b></span>
+        </a>
+        <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+            <input [formControl]="pokemonForm" type="text" (keyup.enter)="pesquisar()" class="form-control" placeholder="Search..." aria-label="Search">
+        </div>
+    </div>
+</header>

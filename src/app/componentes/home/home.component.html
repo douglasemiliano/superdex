@@ -1,0 +1,10 @@
+<div class="col-3">
+    <app-card-pokemon *ngIf="pokemonAtual" [pokemon]="pokemonAtual"></app-card-pokemon>
+</div>
+
+<div *ngIf=" this.listaPokemon && !pokemonAtual" class="row">
+    <div class="col-2" *ngFor="let projeto of this.listaPokemon">
+        <app-card-pokemon [pokemon]="projeto.name"></app-card-pokemon>
+    </div>
+
+</div>
