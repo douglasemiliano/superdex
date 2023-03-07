@@ -1,10 +1,12 @@
-<div class="col-3">
-    <app-card-pokemon *ngIf="pokemonAtual" [pokemon]="pokemonAtual"></app-card-pokemon>
+<div class="d-flex justify-content-center">
+    <app-card-pokemon style="width: 20rem;" *ngIf="pokemonAtual" [pokemon]="pokemonAtual"></app-card-pokemon>
 </div>
 
-<div *ngIf=" this.listaPokemon && !pokemonAtual" class="row">
-    <div class="col-2" *ngFor="let projeto of this.listaPokemon">
-        <app-card-pokemon [pokemon]="projeto.name"></app-card-pokemon>
+<div class="search-results container" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollUpDistance]="2"
+    [infiniteScrollThrottle]="300" (scrolled)="onScrollDown()">
+    <div *ngIf=" this.listaPokemon && !pokemonAtual" class="row">
+        <div class="col-3 mb-4" *ngFor="let pokemon of this.listaPokemon">
+            <app-card-pokemon [pokemon]="pokemon.name"></app-card-pokemon>
+        </div>
     </div>
-
 </div>

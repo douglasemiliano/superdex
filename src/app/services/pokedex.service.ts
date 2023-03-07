@@ -29,4 +29,8 @@ export class PokedexService {
   public genericRequest(url: string): Observable <any> {
     return this.http.get(url);
   }
+
+  public fetchPokemonWithPagination(offset: number, limit: number): Observable<any> {
+    return this.http.get(this.apiUrl + "?offset=" + offset + "&limit=" + limit );
+  }
 }
