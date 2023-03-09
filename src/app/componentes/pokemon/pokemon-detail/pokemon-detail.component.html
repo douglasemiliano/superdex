@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="title" style="text-align: center;"><h1 style="font-weight: bold; text-transform: capitalize;">Pokémon: {{pokemon.name}}</h1></div>
+    <div class="container d-flex flex-row align-items-center justify-content-start">
+      
+      
+      <img *ngIf="!viewShiny" title="Clique para ver a versão shiny!" (click)="shiny()" class="card-img-top" [src]="pokemon.sprite" alt="Card image cap" style="width: 35rem; cursor: pointer;">
+        <img *ngIf="viewShiny" (click)="shiny()" class="card-img-top" [src]="pokemon.spriteShiny" alt="Card image cap" style="width: 35rem; cursor: pointer;">
+
+        <div class="dados" style="width: 20rem; margin-left: 5rem;" >
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Número:</th>
+                    <td><span *ngIf="pokemon.id<100">00</span>{{pokemon.id}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Nome:</th>
+                    <td style="text-transform: capitalize;">{{pokemon.name}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Peso:</th>
+                    <td>{{pokemon.weight}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="row badges">
+                <span *ngFor="let tipo of pokemon.types;" [ngClass]="tipo.type.name" class="badge col-6 p-2 m-1" style="text-transform: uppercase; width: 47%;">{{tipo.type.name}}</span>
+              </div>
+        </div>
+    </div>
+</div>

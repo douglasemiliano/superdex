@@ -4,6 +4,8 @@ export class Pokemon {
     number: number;
     types: any[];
     sprite: string;
+    spriteShiny: string;
     weight: number;
     color: string;
+    id: number;
 }

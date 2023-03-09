@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokedexService } from 'src/app/services/pokedex.service';
 @Component({
   selector: 'app-home',
@@ -9,9 +8,11 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 export class HomeComponent implements OnInit {
 
   public pokemonAtual: any
-  public listaPokemon: any;
+  public listaPokemon: any[];
+  private offset = 20;
+  public limit = 20;
 
-  constructor(private pokedex: PokedexService) { }
+  constructor (private pokedex: PokedexService) { }
 
   public ngOnInit(): void {
     this.pokedex.pokemonAtual.subscribe(data => {
@@ -35,5 +36,12 @@ export class HomeComponent implements OnInit {
         return true;
       } return false;
     } return;
+  }
+
+  public onScrollDown(): void {
+    this.offset += 20;
+    this.pokedex.fetchPokemonWithPagination(this.offset, this.limit).subscribe(data => {
+      this.listaPokemon = this.listaPokemon.concat(data.results);
+    });
   }
 }
