@@ -41,12 +41,7 @@ export class HomeComponent implements OnInit {
   public onScrollDown(): void {
     this.offset += 20;
     this.pokedex.fetchPokemonWithPagination(this.offset, this.limit).subscribe(data => {
-      console.log(data);
       this.listaPokemon = this.listaPokemon.concat(data.results);
-    })
-  }
-
-  onScrollUp() {
-    console.log("scrolled up!!");
+    });
   }
 }

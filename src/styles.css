@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --bug: rgb(0, 203, 51);
+    --dark: rgba(26, 11, 11, 0.415);
+    --dragon: rgb(58, 58, 108);
+    --electric: orange;
+    --fairy: rgb(255, 171, 193);
+    --fighting: rgb(61, 28, 28);
+    --fire: rgb(164, 29, 29);
+    --flying: rgb(161, 161, 252);
+    --ghost: rgb(126, 50, 241);
+    --grass: darkgreen;
+    --ground: rgb(233, 211, 89);
+    --ice: rgb(132, 245, 255);
+    --normal:lightgray;
+    --poison: purple;
+    --psychic: magenta;
+    --rock: rgb(114, 96, 64);
+    --steel: gray;
+    --water: aqua;
+  }
+
+
+  .bug{background-color: var(--bug);}
+  .dark{background-color: var(--dark);}
+  .dragon{background-color: var(--dragon);}
+  .electric{background-color: var(--electric);}
+  .fairy{background-color: var(--fairy);}
+  .fighting{background-color: var(--fighting);}
+  .fire{background-color: var(--fire) }
+  .flying{background-color: var(--flying);}
+  .ghost{background-color: var(--ghost);}
+  .grass{background-color: var(--grass);}
+  .ground{background-color: var(--ground);}
+  .ice{background-color: var(--ice);}
+  .normal{background-color: var(--normal);}
+  .poison{background-color: var(--poison);}
+  .psychic{background-color: var(--psychic);}
+  .rock{background-color: var(--rock);}
+  .steel{background-color: var(--steel);}
+  .water{background-color: var(--water);}

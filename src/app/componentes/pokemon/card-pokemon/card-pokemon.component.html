@@ -1,10 +1,15 @@
+<div class="d-flex justify-content-center" *ngIf="!pokemonAtual.name">
+    <div class="spinner-grow text-light" role="status">
+            <img src="https://icon-library.com/images/pokedex-icon/pokedex-icon-18.jpg" style="width: 100%;">
+    </div>
 
-<div *ngIf="pokemonAtual">
+</div>
+<div *ngIf="pokemonAtual.name">
     <div class="card">
         <div class="card-header">
             <h5 class="card-title" style="text-align: center;">{{pokemonAtual.name}}</h5>
         </div>
-        <img class="card-img-top" [src]="pokemonAtual.sprite" alt="Card image cap">
+        <img class="card-img-top" [src]="pokemonAtual.sprite" style="height: 20rem;" alt="Card image cap" (click)="goToPokemon(pokemonAtual.name)">
     </div>
 </div>
 
